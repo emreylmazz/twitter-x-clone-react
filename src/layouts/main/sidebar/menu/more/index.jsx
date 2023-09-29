@@ -1,6 +1,8 @@
 import React from "react";
 import { Popover,Disclosure } from "@headlessui/react";
 import { Link } from "react-router-dom";
+import classNames from "classNames";
+
 const More = () => {
   return (
     <Popover className="relative">
@@ -49,10 +51,16 @@ const More = () => {
 						Para kazanma
 					</div>
 				</button>
+<div className="h-px bg-[#@2f336] my-0.5 w-[89%] mx-auto"/>
+
                 <Disclosure>
-      <Disclosure.Button className="h-[52px] flex items-center px-4 font-bold justify-between w-full hover:bg-[#eff3f41a] transition-colors">
+      {({open}) => (
+        <>
+        <Disclosure.Button className="h-[52px] flex items-center px-4 font-bold justify-between w-full hover:bg-[#eff3f41a] transition-colors">
         İçerik Üretici Stüdyosu
-        <svg  viewBox="0 0 24 24" width={18.75} height={18.75}>
+        <svg className={classNames({
+            "rotate-180 text-[#1d9bf0]":open
+        })} viewBox="0 0 24 24" width={18.75} height={18.75}>
 									<path
 										fill="currentColor"
 										d="M3.543 8.96l1.414-1.42L12 14.59l7.043-7.05 1.414 1.42L12 17.41 3.543 8.96z"
@@ -70,11 +78,17 @@ const More = () => {
                                     İstatistikler
         </Link>
       </Disclosure.Panel>
+        </>
+      )}
     </Disclosure>
     <Disclosure>
+        {({open})=> (
+        <>
       <Disclosure.Button className="h-[52px] flex items-center px-4 font-bold justify-between w-full hover:bg-[#eff3f41a] transition-colors">
        Profesyonel Araçlar
-        <svg  viewBox="0 0 24 24" width={18.75} height={18.75}>
+        <svg  viewBox="0 0 24 24" width={18.75} height={18.75} className={classNames({
+            "rotate-180 text-[#1d9bf0]":open
+        })}>
 									<path
 										fill="currentColor"
 										d="M3.543 8.96l1.414-1.42L12 14.59l7.043-7.05 1.414 1.42L12 17.41 3.543 8.96z"
@@ -92,11 +106,17 @@ const More = () => {
                                     Reklamlar
         </Link>
       </Disclosure.Panel>
+      </>
+      )}
     </Disclosure>
     <Disclosure>
+    {({open}) => (
+						<>
       <Disclosure.Button className="h-[52px] flex items-center px-4 font-bold justify-between w-full hover:bg-[#eff3f41a] transition-colors">
      Ayarlar ve Destek
-        <svg  viewBox="0 0 24 24" width={18.75} height={18.75}>
+        <svg  viewBox="0 0 24 24" width={18.75} height={18.75} className={classNames({
+            "rotate-180 text-[#1d9bf0]":open
+        })}>
 									<path
 										fill="currentColor"
 										d="M3.543 8.96l1.414-1.42L12 14.59l7.043-7.05 1.414 1.42L12 17.41 3.543 8.96z"
@@ -141,6 +161,8 @@ const More = () => {
                                    Klavye kısayolları
         </Link>
       </Disclosure.Panel>
+      </>
+					)}
     </Disclosure>
       </Popover.Panel>
     </Popover>

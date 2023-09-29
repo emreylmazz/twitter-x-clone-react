@@ -1,3 +1,7 @@
+import store from '../store/index'
+
+
+
 export const mainMenu = [
     {
         path:'/',
@@ -148,7 +152,9 @@ export const mainMenu = [
         }
     },
     {
-        path:'/profile',
+        path:() => {
+            return  `/${store.getState()?.auth?.currentAccount?.username}`
+        },
         title:'Profil',
         icon: {
             active:(<svg viewBox='0 0 24 24' width={26.25} height={26.25}>
@@ -167,6 +173,54 @@ export const mainMenu = [
     </svg>)
         }
     },
+
+]
+export const topics = [
+	{
+		title: 'Türkiye tarihinde gündemde',
+		topic: {
+			type: 'tag',
+			value: 'dilanpolat'
+		}
+	},
+	{
+		title: 'Türkiye tarihinde gündemde',
+		topic: {
+			type: 'query',
+			value: 'Starlink'
+		},
+		postCount: 15640
+	},
+	{
+		title: 'Türkiye tarihinde gündemde',
+		topic: {
+			type: 'tag',
+			value: 'dilanpolat'
+		}
+	},
+	{
+		title: 'Türkiye tarihinde gündemde',
+		topic: {
+			type: 'query',
+			value: 'Starlink'
+		},
+		postCount: 15640
+	},
+	{
+		title: 'Türkiye tarihinde gündemde',
+		topic: {
+			type: 'tag',
+			value: 'dilanpolat'
+		}
+	},
+	{
+		title: 'Türkiye tarihinde gündemde',
+		topic: {
+			type: 'query',
+			value: 'Starlink'
+		},
+		postCount: 15640
+	},
 
 ]
 export default mainMenu;

@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Messages = () => {
+const messages = () => {
   return (
-    <div>Messages</div>
+    <div>messages component</div>
   )
 }
 
-export default Messages
+export default messages

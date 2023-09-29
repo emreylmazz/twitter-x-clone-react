@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Bookmarks = () => {
+const bookmarks = () => {
   return (
-    <div>Bookmarks</div>
+    <div>bookmarks components</div>
   )
 }
 
-export default Bookmarks
+export default bookmarks

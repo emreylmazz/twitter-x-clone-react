@@ -2,7 +2,7 @@ import React from 'react'
 
 const Lists = () => {
   return (
-    <div>Lists</div>
+    <div>Lists component</div>
   )
 }
 
