@@ -3,21 +3,22 @@ import { Link } from "react-router-dom";
 import { numberFormat } from "../../../utils/formats";
 import {Popover} from "@headlessui/react";
 
-const Topic = ({ item }) => {
-  return (
-    <Link to="/" className="py-3 px-4 hover:bg-white/[0.03] transition-colors relative">
-      <div className="text-[13px] text-[#71767b] leading-4">
-        {item.title}</div>
-        <div>
-          {item.topic.type == 'tag' && '#'}{item.topic.value}
-        </div>
-        {item?.postCount && (
-          <div className="text-[13px] text-[#71767b] mt-1 leading-4">
-            {numberFormat(item.postCount)} posts
-          </div>
-        )}
-        
-        <Popover className="absolute top-1.5 right-2">
+export default function Topic({item}) {
+	return (
+		<Link
+			to="/"
+			className="py-3 px-4 transition-colors hover:bg-[color:var(--background-third)] relative"
+		>
+			<div className="text-[13px] text-[color:var(--color-base-secondary)] leading-4">{item.title}</div>
+			<div className="text-[15px] font-bold leading-5 mt-0.5">
+				{item.topic.type === 'tag' && '#'}{item.topic.value}
+			</div>
+			{item?.postCount && (
+				<div className="text-[13px] text-[color:var(--color-base-secondary)] mt-1 leading-4">
+					{numberFormat(item.postCount)} posts
+				</div>
+			)}
+			<Popover className="absolute top-1.5 right-2">
 				<Popover.Button
 					className="outline-none w-[34.75px] h-[34.75px] rounded-full text-[color:var(--color-base-secondary)] flex items-center justify-center hover:text-[color:var(--color-primary)] transition-colors relative before:absolute before:inset-0 before:rounded-full hover:before:hover:bg-[color:var(--color-primary)] before:transition-all before:z-[-1] before:opacity-[.15] z-[1]"
 				>
@@ -49,9 +50,6 @@ const Topic = ({ item }) => {
 					</button>
 				</Popover.Panel>
 			</Popover>
-
-    </Link>
-  );
-};
-
-export default Topic;
+		</Link>
+	)
+}

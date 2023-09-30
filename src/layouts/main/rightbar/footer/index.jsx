@@ -38,7 +38,7 @@ export default function Footer() {
 					</Popover.Panel>
 				</Popover>
 				<p className="text-[color:var(--color-base-secondary)] leading-4 text-[13px]">
-					&copy; 2023 EY
+					&copy; 2023 EMRE YILMAZ
 				</p>
 			</div>
 		</footer>

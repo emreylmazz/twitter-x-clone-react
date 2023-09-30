@@ -32,7 +32,7 @@ export default function Search() {
 				<input
 					type="text"
 					placeholder="Ara"
-					className="w-full h-full bg-transparent rounded-full placeholder-[#71767b] outline-none pl-[56px] text-[15px]"
+					className="w-full h-full bg-transparent rounded-full outline-none pl-[56px] text-[15px]"
 					value={query}
 					onFocus={() => setFocus(true)}
 					onChange={e => setQuery(e.target.value)}
